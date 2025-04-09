@@ -21,7 +21,6 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        # Add any dependencies your project needs here
     
     - name: Run tests
       run: |
