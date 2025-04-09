@@ -8,23 +8,18 @@ A simple terminal-based slot machine game built in Python.
 - Features different symbol rarities and payouts.
 
 ## 🕹️ How to Play
-Run the game:
+1. Run the game:
 
-bash
-Copy
-Edit
+```bash
 python slot_machine.py
-Deposit some money into your balance.
+```
 
-Choose:
-
+2. Deposit some money into your balance.
+3. Choose:
 How many lines you want to bet on (1–3).
-
 How much money to bet per line.
-
-Spin the slot machine and see if you win!
-
-Continue playing until you choose to quit.
+4. Spin the slot machine and see if you win!
+5. Continue playing until you choose to quit.
 
 ## 🪙 Symbols & Payouts
 Symbol	Frequency	Payout Multiplier
@@ -47,14 +42,12 @@ Game interaction logic
 
 To run tests:
 
-bash
-Copy
-Edit
+```bash
 python -m unittest discover -s . -p "*_test.py"
+```
+
 ## 📁 File Structure
-bash
-Copy
-Edit
+
 📦 Spaced-Repetition/
 ├── slot_machine.py        # Main game logic
 ├── test_slot_machine.py   # Unit tests
