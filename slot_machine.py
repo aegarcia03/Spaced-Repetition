@@ -19,11 +19,14 @@ class SlotMachine():
 
         # Define all available symbols with their properties
         self.symbols = {
-            "A": Symbol("A", 2, 5), # Symbol A: rare (2) but high value (5x)
-            "B": Symbol("B", 4, 4),
-            "C": Symbol("C", 6, 3),
-            "D": Symbol("D", 8, 2)
+            "💎": Symbol("💎", 1, 10),     # Very rare, huge payout
+            "🍒": Symbol("🍒", 2, 5),      # Rare, good payout
+            "🔔": Symbol("🔔", 3, 6),      # Medium rare
+            "🍋": Symbol("🍋", 4, 4),      # Uncommon
+            "🍉": Symbol("🍉", 6, 3),      # Common
+            "🍀": Symbol("🍀", 8, 2)       # Very common
         }
+
     def spin(self):
         '''Simulates the spinning of the slot machine'''
         #Create a pool of all symbols according to their frequencies
@@ -77,6 +80,11 @@ class SlotMachine():
 
         return winnings, winning_lines
 
+    def show_payout_table(self):
+            print("\n🎰 Symbol Payouts:")
+        print("------------------------")
+        for symbol in self.symbols.values():
+            print(f"{symbol.name}  →  x{symbol.value} payout")
 
 class Player():
     '''Represents a player balance and deposit functionality'''
@@ -198,11 +206,12 @@ class Game():
         - Final balance display
         """
         self.player.deposit()
+        self.slot_machine.show_payout_table()
         #Main game loop
         while True:
             print(f"Current balance is ${self.player.balance}")
             #Ask if player wants to play or quit
-            answer = input("Press enter to play (q to quit).")
+            answer = input("🎰Press enter to play (q to quit).")
             if answer.lower() == "q":
                 break
             #Play one round of the fame 

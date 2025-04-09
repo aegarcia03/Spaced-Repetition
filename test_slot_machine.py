@@ -52,9 +52,9 @@ class TestSlotMachine(unittest.TestCase):
         """Test check_winnings with no winning lines"""
         # Create a grid with no winning lines
         columns = [
-            ["A", "B", "C"],
-            ["B", "C", "A"],
-            ["C", "A", "B"]
+            ["🍒", "🍉", "🍀"],
+            ["🍒", "🍋", "🍀"],
+            ["🍒", "🍉", "🍀"]
         ]
         winnings, winning_lines = self.slot_machine.check_winnings(columns, 3, 10)
         self.assertEqual(winnings, 0)
