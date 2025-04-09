@@ -30,21 +30,14 @@ class SlotMachine():
         all_symbols = []
         for symbol_name, symbol in self.symbols.items():
             # Add each symbol to the pool number of times specified by its frequency
-            for _ in range(symbol.frequency):
-                all_symbols.append(symbol_name)
+            all_symbols.extend([symbol_name] * symbol.frequency)
         
         # Generate the result grid column by column
         columns = []
         for _ in range(self.cols):
             column = []
-            # Create a copy of the symbol pool for each column
-            # so we don't pick the same symbol twice in a column
-            current_symbols = all_symbols.copy() # i can use also all_symbols[:]
-
             for _ in range(self.rows):
-                value = random.choice(current_symbols)
-                #remove that symbol from the pool to avoid duplication
-                current_symbols.remove(value)
+                value = random.choice(all_symbols)
                 # add the value to the current colum
                 column.append(value)
         
@@ -63,40 +56,27 @@ class SlotMachine():
                 else:
                     print(column[row], end="")# Last symbol in row has no divider
             print() #Move to the next row
+
     def check_winnings(self, columns, lines, bet):
-        '''Checks for winning lines and calculates total winnings
-        A line wins if all symbols in the line all
-        Args:
-            columns: The grid of symbols
-            lines: Number of lines being bet on
-            bet: Amount bet per line
-            
-        Returns:
-            tuple: (total winnings, list of winning line numbers)'''
-        
+        '''
+        Checks for winning lines and calculates total winning
+        '''
         winnings = 0
         winning_lines = []
-        #Check each line the player bet on
-        for line in range(lines):
-            # Get the symbol at the start of the line
+
+        for line in range(lines):  # line = 0, 1, 2 depending on how many lines bet on
             symbol = columns[0][line]
 
-            #Check if all symbols in this line match
             for column in columns:
-                symbol_to_check = column[line]
-                if symbol != symbol_to_check:
-                    # If a'ny symbol doesn't match, this isn't a winning line
+                if column[line] != symbol:
                     break
-                else:
-                # This else clause executes if the for loop completes normally
-                # (no breaks), meaning all symbols in the line matched
-                
-                # Calculate winnings for this line (symbol value * bet amount)
-                    winnings += self.symbols[symbol].value * bet
-                    # Record this as a winning line (add 1 because lines are 1-indexed for players)
-                    winning_lines.append(line + 1)
-        
+            else:
+                # This else block only runs if the loop didn't break
+                winnings += self.symbols[symbol].value * bet
+                winning_lines.append(line + 1)
+
         return winnings, winning_lines
+
 
 class Player():
     '''Represents a player balance and deposit functionality'''
