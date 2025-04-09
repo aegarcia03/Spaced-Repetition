@@ -23,12 +23,14 @@ How much money to bet per line.
 
 ## 🪙 Symbols & Payouts
 
-| Symbol | Frequency     | Payout Multiplier |
-|--------|---------------|-------------------|
-| A      | Rare          | x5                |
-| B      | Uncommon      | x4                |
-| C      | Common        | x3                |
-| D      | Very Common   | x2                |
+| Symbol | Emoji | Frequency     | Payout Multiplier |
+|--------|-------|---------------|-------------------|
+| A      | 💎    | Very Rare     | x10               |
+| B      | 🍒    | Rare          | x5                |
+| C      | 🔔    | Common        | x6                |
+| D      | 🍋    | Very Common   | x4                |
+| E      | 🍉    | Rare          | x3                |
+| F      | 🍀    | Very Common   | x2                |
 
 The rarer the symbol, the bigger the payout — but the harder it is to match!
 
