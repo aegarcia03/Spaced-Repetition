@@ -82,7 +82,7 @@ class SlotMachine():
 
     def show_payout_table(self):
             print("\n🎰 Symbol Payouts:")
-        print("------------------------")
+            print("------------------------")
         for symbol in self.symbols.values():
             print(f"{symbol.name}  →  x{symbol.value} payout")
 
