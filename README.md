@@ -22,11 +22,14 @@ How much money to bet per line.
 5. Continue playing until you choose to quit.
 
 ## 🪙 Symbols & Payouts
-Symbol	Frequency	Payout Multiplier
-A	Rare	x5
-B	Uncommon	x4
-C	Common	x3
-D	Very Common	x2
+
+| Symbol | Frequency     | Payout Multiplier |
+|--------|---------------|-------------------|
+| A      | Rare          | x5                |
+| B      | Uncommon      | x4                |
+| C      | Common        | x3                |
+| D      | Very Common   | x2                |
+
 The rarer the symbol, the bigger the payout — but the harder it is to match!
 
 ## 🧪 Tests
@@ -47,11 +50,12 @@ python -m unittest discover -s . -p "*_test.py"
 ```
 
 ## 📁 File Structure
-
+```bash
 📦 Spaced-Repetition/
 ├── slot_machine.py        # Main game logic
 ├── test_slot_machine.py   # Unit tests
 ├── README.md              # Project documentation
+```
 
 ## 💡 Ideas for Expansion
 Diagonal win detection
