@@ -217,7 +217,7 @@ class Game():
             #Play one round of the fame 
             self.play_round()
         #Display the final balance when player quits
-        print(f"You left with ${balance}")
+        print(f"You left with ${self.player.balance}")
 
 
 
